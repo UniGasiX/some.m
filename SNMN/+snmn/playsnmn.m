@@ -1,4 +1,4 @@
-function soundmatrix = playsnmn(name,func,bdura,fs)
+function soundm=playsnmn(name,func,bdura,fs)
 %playsnmn - 直接从snmn格式文件转换出音频信号矩阵并播放，需给定单音生成函数等。
 %
 %    soundmatrix = playsnmn(name,func,bdura,fs)
@@ -15,10 +15,8 @@ function soundmatrix = playsnmn(name,func,bdura,fs)
 %
 %    fs
 %        每秒采样数。
-%
-%    返回生成的音频信号单行矩阵。
-    
-  soundmatrix=snmn.str2sound(snmn.readtxt(name),func,bdura,fs);
-  soundsc(soundmatrix,fs);
+
+  soundm=snmn.str2sound(snmn.readtxt(name),func,bdura,fs);
+  soundsc(soundm,fs);
 
 end

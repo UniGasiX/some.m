@@ -1,5 +1,5 @@
 function [soundm,tmpstruct] = genwave(strct,bdura,fs,tempstruct)
-%genwave - 给定该音的各项参数等生成对应音频数据
+%genwave - 给定该音的各项参数等生成对应音频数据，使用正弦音
 %
 %    [soundm,tempstruct] = genwave(strct,bdura,fs,tempstruct)
 %
