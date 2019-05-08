@@ -1,1 +1,1 @@
-snmn.playsnmn('snmn_samples/ode2joy.snmn',str2func('sinwave.genwave_atte'),0.5,10800);
+snmn.playsnmn('snmn_samples/ode2joy.snmn',str2func('sinwave.genwave_expdamp'),0.5,10800);

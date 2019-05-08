@@ -1,7 +1,7 @@
-function [soundm,tmpstruct] = genwave_atte(strct,bdura,fs,tempstruct)
-%genwave_atte - 给定该音的各项参数等生成对应音频数据，使用正弦音，返回的声音进行了一定形式的衰减
+function [soundm,tmpstruct] = genwave_expdamp(strct,bdura,fs,tempstruct)
+%genwave_expdamp - 给定该音的各项参数等生成对应音频数据，使用正弦音，返回的声音进行了指数衰减
 %
-%    [soundm,tmpstruct] = genwave_atte(strct,bdura,fs,tempstruct)
+%    [soundm,tmpstruct] = genwave_expdamp(strct,bdura,fs,tempstruct)
 %
 %    strct
 %        包含该音各项信息的struct
@@ -28,7 +28,7 @@ function [soundm,tmpstruct] = genwave_atte(strct,bdura,fs,tempstruct)
   tmpstruct=tempstruct;
 
   function output = atte_m(ori_m)
-    att=3.^(linspace(0,2*pi*strct.dura*bdura,fs*strct.dura*bdura).*(-1));
+    att=20.^(linspace(0,strct.dura*bdura,fs*strct.dura*bdura).*(-1));
     output=ori_m.*att;
   end
 
